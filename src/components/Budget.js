@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+import BudgetReadOnly from './BudgetReadOnly'
+import EditableBudget from './EditableBudget'
 const Budget = () => {
     const {dispatch, budget} = useContext(AppContext);
     let storeNewBudg
@@ -21,9 +23,15 @@ const Budget = () => {
             storeNewBudg = budget
             val.target.innerHTML = budget
         } else if (val.target.innerHTML < totalExpenses){
-            window.alert("No")
-            storeNewBudg = budget
-            val.target.innerHTML = budget
+            setTimeout(() => {
+                if(val.target.innerHTML < totalExpenses){
+                    window.alert("Value of budget inferior to total expense!")
+                    storeNewBudg = budget
+                    val.target.innerHTML = budget
+                } else {
+
+                }
+            }, 3000)
         } 
         
         else {
@@ -35,6 +43,8 @@ const Budget = () => {
     return (
         <div className='alert alert-secondary' >
             <span id="interText">Budget: £ <span contentEditable onKeyUp={(e) => {ahaha(e)}}>{budget}</span></span>
+            <BudgetReadOnly/>
+            <EditableBudget/>
         </div>
     );
 };
