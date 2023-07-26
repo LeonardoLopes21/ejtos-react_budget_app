@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
+import './editableBudg.css'
 
 
 const EditableBudget = () => {
 
 
-    const {dispatch, budget} = useContext(AppContext);
+    const {dispatch, budget, currency} = useContext(AppContext);
     const [finVal, setFinVal] = React.useState(0)
     const { expenses } = useContext(AppContext);
     const totalExpenses = expenses.reduce((total, item) => {
@@ -36,7 +37,7 @@ const EditableBudget = () => {
 
     return(
         <div>
-            <input type="number" value={finVal} onChange={(e) => {budgetSetter(e.target.value, e)}}/>
+            Budget: {currency}<input type="number" name="inputNum" className="editInput" value={finVal} onChange={(e) => {budgetSetter(e.target.value, e)}}/>
         </div>
     )
 }
