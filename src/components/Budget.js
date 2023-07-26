@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import BudgetReadOnly from './BudgetReadOnly'
 import EditableBudget from './EditableBudget'
 const Budget = () => {
     const {dispatch, budget} = useContext(AppContext);
@@ -43,7 +42,7 @@ const Budget = () => {
     return (
         <div className='alert alert-secondary' >
             <span id="interText">Budget: £ <span contentEditable onKeyUp={(e) => {ahaha(e)}}>{budget}</span></span>
-            <BudgetReadOnly/>
+
             <EditableBudget/>
         </div>
     );
