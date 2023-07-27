@@ -2,3 +2,47 @@
     width: 150px;
     display:inline;
 }
+
+.buttonIncrease{
+    border-radius: 60%;
+    background-color: rgb(85, 204, 85);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+    
+}
+
+.buttonDecrease{
+    border-radius: 60%;
+    background-color: rgb(185, 49, 49);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+    
+}
+
+.iconBtn {
+    position: relative;
+    color: white;
+    font-size: 50px;
+    bottom:29px;
+    right:8.2px;
+    font-weight: 400;
+}
+
+.iconBtnToo {
+    position: relative;
+    color: white;
+    font-size: 50px;
+    bottom:29px;
+    right:2px;
+    font-weight: 400;
+}
+
+.currDisplay {
+    position:relative;
+    left:30px;
+    font-size: 25px;
+}
